@@ -1,0 +1,21 @@
+{
+ "align_labels_left": 0, 
+ "creation": "2017-08-16 15:12:37.234957", 
+ "custom_format": 0, 
+ "disabled": 0, 
+ "doc_type": "CAPA", 
+ "docstatus": 0, 
+ "doctype": "Print Format", 
+ "font": "Default", 
+ "idx": 0, 
+ "line_breaks": 0, 
+ "modified": "2017-08-16 15:12:50.777251", 
+ "modified_by": "lars.mueller@hseag.com", 
+ "module": "Quality", 
+ "name": "CAPA print template", 
+ "owner": "lars.mueller@hseag.com", 
+ "print_format_builder": 1, 
+ "print_format_type": "Server", 
+ "show_section_headings": 0, 
+ "standard": "Yes"
+}
