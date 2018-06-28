@@ -1,0 +1,22 @@
+{
+ "align_labels_right": 0, 
+ "creation": "2018-06-28 21:42:01.261267", 
+ "custom_format": 1, 
+ "disabled": 0, 
+ "doc_type": "Audit Request", 
+ "docstatus": 0, 
+ "doctype": "Print Format", 
+ "font": "Default", 
+ "html": "<!-- HEAD -->\n<div  id=\"header-html\" class=\"hidden-pdf\" >\n    {% set letter_head_name = frappe.get_all('Letter Head', filters={'is_default': 1}, fields=['name']) %}\n    {% if letter_head_name %}\n      {% set letter_head = frappe.get_doc(\"Letter Head\", letter_head_name[0]) %}\n      {% if letter_head %}\n        {{ letter_head.content }}\n      {% else %}\n        <p>Defalut letter head not found.</p>\n      {% endif %}\n    {% else %}\n      <p>No default letter head found. Please define a default letter head.</p>\n    {% endif %}\n</div>\n\n<!-- COVER PAGE -->\n<p><br><br><br><br><br></p>\n<center><h1>{{ doc.name }}</h1></center>\n<p><br></p>\n<center><h2>{{ doc.title }}</h2></center>\n\n<div class=\"page-break\"></div>\n\n<!-- Content Page -->\n<h2>Front Office</h2>\n<p><b>Request Number:</b> {{ doc.name }}</p>\n<p><b>Request:</b> {{ doc.title }}</p>\n<p><b>Request Timestamp:</b> {{ doc.request_timestamp }}</p>\n<p><b>Details / Background:</b><br>{{ doc.details }}</p>\n<p><b>Assessor:</b> {{ doc.assessor }}</p>\n<p><b>Priority:</b> {{ doc.priority}}</p>\n\n<h2>Back Office</h2>\n<p><b>Backoffice Timestamp:</b> {{ doc.backoffice_timestamp }}</p>\n<p><b>Subject Matter Expert (SME):</b> {{ doc.expert }}</p>\n<p><b>Responsible:</b><br>{{ doc.responsible}}</p>\n<p><b>Answer and Documents/Links:</b><br>{{ doc.answer }}</p>\n<p><b>Status:</b> {{ doc.status}}</p>\n<p><b>Copy to Inspector:</b> {% if doc.copy_to_inspector %}YES{% else %}NO{% endif %}</p>\n\n<!-- page footer -->\n<div id=\"footer-html\" class=\"visible-pdf\">\n   <center><p style=\"font-size: 8pt !important;\">{{ _(\"Page\") }} <span class=\"page\"></span> {{ _(\"of\") }} <span class=\"topage\"></span></p></center>\n   {% if letter_head %}\n     {{ letter_head.footer }}\n   {% else %}\n     <p>No letter head found. Please define a letter head under print settings and mark it as default</p>\n   {% endif %}</span></p>\n</div>", 
+ "idx": 0, 
+ "line_breaks": 0, 
+ "modified": "2018-06-28 21:51:16.694738", 
+ "modified_by": "Administrator", 
+ "module": "Quality", 
+ "name": "Audit Request", 
+ "owner": "Administrator", 
+ "print_format_builder": 0, 
+ "print_format_type": "Server", 
+ "show_section_headings": 0, 
+ "standard": "Yes"
+}
